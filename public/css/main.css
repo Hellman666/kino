@@ -1,0 +1,115 @@
+body, html{
+    height: 100%;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.bg-image{
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-text{
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4);
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+h1{   
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+footer{
+    background-color: #B0B0B0;
+    padding: 20px;
+    text-align: center;
+}
+
+.responsive{
+    width: 100%;
+    height: auto;
+}
+.card{
+    padding: 5px;
+}
+.col{
+    padding: 5%;
+}
+
+.containerTransparent {
+    position: relative;
+    max-width: 800px; 
+    margin: 0 auto; 
+  }
+  
+  .containerTransparent .content {
+    position: absolute; 
+    bottom: 0; 
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+
+.container{
+    padding-top: 15px;
+}
+
+.Border{
+      border: 2px solid grey;
+      padding-left: 10px;
+      padding-top: 10px;
+      padding-right: 10px;
+}
+
+.styled-table thead tr {
+    background-color: #383a39;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #676867;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #000000;
+}
+
+.styled-table{
+    margin-left: auto;
+    margin-right: auto;
+}
