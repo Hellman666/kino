@@ -47,7 +47,7 @@ app.get('/login', (req, res) => {
 
 
 
-/*app.use('node_modules')
+/*app.use('public')
 app.use("/bootstrap", express.static(__dirname, 'public/css/bootstrap/dist/css/bootstrap.css'));*/
 
 // Listen on port 3000
