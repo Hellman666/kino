@@ -1,3 +1,4 @@
+// zapnutí aplikace: node app.js
 //imports
 const express = require('express')
 const app = express()
@@ -26,19 +27,19 @@ app.get('/films', (req, res) => {
 })
 
 app.get('/actors', (req, res) => {
-    res.render('actors', { Text: 'Actors Page' })
+    res.render('actors', { Text: 'Herci' })
 })
 
 app.get('/projections', (req, res) => {
-    res.render('projections', { Text: 'Projections Page' })
+    res.render('projections', { Text: 'Projekce' })
 })
 
 app.get('/register', (req, res) => {
-    res.render('register', { Text: 'Register Page' })
+    res.render('register', { Text: 'Registrace' })
 })
 
 app.get('/login', (req, res) => {
-    res.render('login', { Text: 'Login Page' })
+    res.render('login', { Text: 'Přihlášení' })
 })
 
 /*app.get('', (req, res) =>{
