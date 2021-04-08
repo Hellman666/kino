@@ -40,9 +40,6 @@ h1{
     text-align: center;
 }
 
-h3{
-    text-align: center;
-}
 
 footer{
     background-color: #B0B0B0;
@@ -181,4 +178,12 @@ footer{
     cursor: pointer;
     font-weight: bold;
     color: #ffffff;
+}
+
+.container-border{
+    padding: 5%;
+}
+
+.Border{
+    padding: 20px;
 }
