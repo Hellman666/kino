@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kino Hvězda</title>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap/dist/css/bootstrap.css">
+</head>
+<body style="background-color: #C8C8C8;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/index">Kino Hvězda</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="navbar-collapse collapse show" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/about">O kinu
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/films">Filmy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/actors">Herci</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/projections">Promítání</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mr-right">
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Registrace</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Přihlásit se</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<div class="container">
+    <div class="container mt-5">
+        <h1>Vítejte</h1>
+        <div>
+            <h2> Ahoj <%= user.fullname%></h2>
+            <br>
+            <div>
+                <form method="POST" action="/logout">
+                    <button type="submit" class="btn btn-primary">Log out</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

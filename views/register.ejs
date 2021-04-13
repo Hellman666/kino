@@ -1,60 +1,86 @@
 <!DOCTYPE html>
-<html lang="cs">
-  <head>
+<html lang="en">
+<head>
+    <title>Kino Hvězda</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/bootstrap/dist/css/bootstrap.css">
-    <title><%= Text %></title>
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/index">Kino Hvězda</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="true" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="navbar-collapse collapse show" id="navbarColor02">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/about">O kinu
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/films">Filmy</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/actors">Herci</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/projections">Promítání</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav mr-right">
-        <li class="nav-item">
-          <a class="nav-link" href="/register">Registrace</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Přihlásit se</a>
-        </li>
-      </ul>
+    <link rel="stylesheet" href="css/bootstrap/dist/css/bootstrap.css"></head>
+<body style="background-color: #C8C8C8;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/index">Kino Hvězda</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="navbar-collapse collapse show" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/about">O kinu
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/films">Filmy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/actors">Herci</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/projections">Promítání</a>
+            </li>
+            </ul>
+            <ul class="navbar-nav mr-right">
+            <li class="nav-item">
+                <a class="nav-link" href="/register">Registrace</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Přihlásit se</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mt-5">
+            <div>
+                <% if(errors != "") { %>
+                    <% errors.forEach((item) => { %>
+                        <div class="alert alert-danger">
+                            <%- item %>
+                        </div>
+                    <% }); %>
+                <% } %>
+            </div>
+            <div class="container" style="color: grey;">
+                <div class="register-form">
+                    <form method="POST" action="/register">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="fullName" id="fullName" placeholder="Jméno">
+                        </div>
+                        <div class="form-group">
+                            
+                            <input type="text" name="email" class="form-control" id="email" placeholder="E-amil" required>
+                        </div>
+                        <div class="form-group">
+                            
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Heslo" required>
+                        </div>
+                        <div class="form-group">
+                            
+                            <input type="password" class="form-control" name="passwordConfirmation" id="passwordConfirmation" placeholder="Potvrdit heslo" required>
+                        </div>
+                        <div class="center">
+                            <button type="submit" class="btn btn-primary">Registrovat se</button>
+                        </div>
+                    </form>
+                    <hr>
+                    <div>
+                        Už mám účet. <a href="/login">Přihlásit se</a>.
+                    </div>
+                </div>
+            </div>
+            <!--</div>-->
+        </div>
     </div>
-  </nav>
-
-  <div class="container">
-    <div class="register-form">
-      <h1>Registrovat se</h1>
-      <form action="auth" method="POST">
-        <input type="text" name="e-mail" placeholder="E-mail" required>
-        <input type="text" name="username" placeholder="Uživatelské jméno" required>
-        <input type="password" name="password" placeholder="Heslo" required>
-        <input type="password" name="re-password" placeholder="Potvrdit heslo" reqired>
-        <input type="submit">
-      </form>
-    </div>
-  </div>
-
 </body>
 </html>
