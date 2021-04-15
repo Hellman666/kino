@@ -3,6 +3,6 @@ const dbConnection = mysql.createPool({
     host        :   'localhost',
     user        :   'root',
     password    :   '',
-    database    :   ''
+    database    :   'kina'
 }).promise();
 module.exports = dbConnection

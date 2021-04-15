@@ -4,9 +4,11 @@ const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const connectFlash = require('connect-flash')
 const passport = require('passport')
+const mysql = require('mysql2');
 
 import configViewEngine from "./configs/viewEngine";
 import initWebRoutes from "./routes/web";
+import db from "./configs/DBConnection";
 
 const app = express()
 
@@ -33,27 +35,36 @@ app.use(passport.initialize());
 app.use(passport.session());
 // init all web routes
 initWebRoutes(app);
+/*
+const con = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'kina',
+})
+
+con.query('SELECT * FROM filmy', (err, rows) => {
+    if(err) throw err;
+    console.log('Data received from DB:');
+    console.log(rows);
+    rows.forEach((row) => {
+        console.log(row.nazev_cz + " is long " + row.delka);
+    });
+})
+*/
 
 app.get('/index', (req, res) => {
     res.render('index', { Text: 'Kino Hvězda' })
 })
-
-app.get('/about', (req, res) => {
-    res.render('about', { Text: 'O kině' })
-})
-
-app.get('/films', (req, res) => {
-    res.render('films', { Text: 'Filmy' })
-})
-
-app.get('/actors', (req, res) => {
-    res.render('actors', { Text: 'Herci' })
-})
-
-app.get('/projections', (req, res) => {
-    res.render('projections', { Text: 'Projekce' })
-})
-
-
+/*
+app.get('/kina', (req, res) => {
+    let sql = 'SELECT * FROM filmy';
+    let query = db.query(sql, (err, results) => {
+        if(err) throw err;
+        console.log(results);
+        res.send('POsts fetched...');
+    });
+});
+*/
 let port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Building a login system with NodeJS is running on port ${port}!`));

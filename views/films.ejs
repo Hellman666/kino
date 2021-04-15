@@ -46,11 +46,11 @@
     <div class="containerTransparent">
       <img src="img/film.jpg" alt="about1" style="width:100%;">
       <div class="content">
-        <h1><%= Text %></h1>
+        <h1>Filmy</h1>       
         <br>
       </div>
     </div>
-
+    <p><%= filmy.idfilmy %></p>
     <div class="container">
       <table class="styled-table">
         <thead>
@@ -64,15 +64,13 @@
             </tr>
         </thead>        
         <tbody>
-        
-            <tr>
-                <td>film.idfilmy</td>
-                <td>film.nazev_cz</td>
-                <td>film.delka</td>
-                <td>film.typ_idtyp</td>
-                <td>film.zanr_filmu_idzanr_filmu</td>
-            </tr>
-          
+          <tr>
+            <td> <%= filmy.idfilmy %></td>
+            <td> <%= filmy.nazev_cz %></td>
+            <td> <%= filmy.delka %> min.</td>
+            <td> <%= filmy.typ_idtyp %></td>
+            <td> <%= filmy.zanr_filmu_idzanr_filmu %></td>
+        </tr>
         </tbody>        
       </table>
     </div>
