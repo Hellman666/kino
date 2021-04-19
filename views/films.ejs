@@ -50,10 +50,11 @@
         <br>
       </div>
     </div>
-    <p><%= filmy.idfilmy %></p>
+    <p><%= //filmy.forEach((film) => { console.log(film[1]) }); %></p>
     <div class="container">
       <table class="styled-table">
         <thead>
+         
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Název</th>
@@ -63,14 +64,16 @@
 
             </tr>
         </thead>        
-        <tbody>
-          <tr>
-            <td> <%= filmy.idfilmy %></td>
-            <td> <%= filmy.nazev_cz %></td>
-            <td> <%= filmy.delka %> min.</td>
-            <td> <%= filmy.typ_idtyp %></td>
-            <td> <%= filmy.zanr_filmu_idzanr_filmu %></td>
-        </tr>
+        <tbody> 
+          <% for(var i = 0; i < filmy.length; i++) { %>
+          <tr>            
+            <td> <%= filmy[i].idfilmy %></td>
+            <td> <%= filmy[i].nazev_cz %></td>
+            <td> <%= filmy[i].delka %> min.</td>
+            <td> <%= filmy[i].typ_filmu %></td>
+            <td> <%= filmy[i].zanr_filmu %></td>           
+         </tr>  
+          <% } %>    
         </tbody>        
       </table>
     </div>

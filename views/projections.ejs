@@ -63,13 +63,15 @@
             </tr>
         </thead>
         <tbody>
+          <% for(var i = 0; i < projekce.length; i++) { %>
             <tr>
-                <td><%= projekce.idpromitani%></td>
-                <td><%= projekce.datum%></td>
-                <td><%= projekce.cas%></td>
-                <td><%= projekce.filmy_idfilmy%></td>
-                <td><%= projekce.saly_idsaly%></td>
+                <td><%= projekce[i].idpromitani%></td>
+                <td><%= projekce[i].datum.getDate() + ". " +  projekce[i].datum.getMonth() + ". " + projekce[i].datum.getFullYear() %></td>
+                <td><%= projekce[i].cas%></td>
+                <td><%= projekce[i].nazev_cz%></td>
+                <td><%= projekce[i].saly_idsaly%></td>
             </tr>
+          <% } %>
         </tbody>
       </table>
     </div>

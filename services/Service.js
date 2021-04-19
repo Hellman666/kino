@@ -7,7 +7,7 @@ import db from "../configs/DBConnection";
         console.log(row.nazev_cz + " is long " + row.delka);
     });
 })*/
-let filmy = () => {
+/*let filmy = () => {
     return new Promise((resolve, reject) => {
         try{
             db.query(
@@ -50,4 +50,4 @@ let herci = () => {
 module.exports = {
     filmy: filmy,
     herci: herci,
-}
+}*/

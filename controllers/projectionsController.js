@@ -1,12 +1,12 @@
 import db from "../configs/DBConnection";
 
-let sql = 'SELECT * FROM promitani';
-let queryResult;
+let sql = 'SELECT * FROM promitani JOIN filmy ON filmy.idfilmy = promitani.filmy_idfilmy';
+let queryResult = [];
 let promitani = db.query(sql, (err, results) =>{
     if (err) throw err;
-    console.log(results);
+    //console.log(results);
     results.forEach((projekce) => {
-        queryResult = projekce;
+        queryResult.push(projekce);
     })
 })
 

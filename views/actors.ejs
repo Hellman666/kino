@@ -64,13 +64,15 @@
                 </tr>
             </thead>
             <tbody>
+              <% for(var i = 0; i < herci.length; i++) { %>
                 <tr>
-                    <td><%= herci.idherci%></td>
-                    <td><%= herci.jmeno%></td>
-                    <td><%= herci.prijmeni%></td>
-                    <td><%= herci.datum_narozeni%></td>
-                    <td><%= herci.jmeno_postavy%></td>
+                    <td><%= herci[i].idherci%></td>
+                    <td><%= herci[i].jmeno%></td>
+                    <td><%= herci[i].prijmeni%></td>
+                    <td><%= herci[i].datum_narozeni.getDate() + ". " +  herci[i].datum_narozeni.getMonth() + ". " + herci[i].datum_narozeni.getFullYear()%></td>
+                    <td><%= herci[i].jmeno_postavy%></td>
                 </tr>
+              <% } %>
             </tbody>
           </table>
         </div>

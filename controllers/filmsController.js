@@ -35,16 +35,17 @@ let filmy = (req) => {
 }
 */
 
-let sql = 'SELECT * FROM filmy';
-let queryResult;
+let sql = 'SELECT * FROM filmy JOIN typ ON filmy.typ_idtyp = typ.idtyp JOIN zanr_filmu ON idzanr_filmu = zanr_filmu_idzanr_filmu';
+let queryResult = [];
+//zanr_filmu.zanr_filmu where idzanr_filmu = typ_idtyp
 let filmy = db.query(sql, (err, results) =>{
     if (err) throw err;
-    console.log(results);
+    //console.log(results);
     //queryResult = results;
     results.forEach((film) => {
-        queryResult = film;
-        //console.log(film.nazev_filmu + " " + film.delka);
+        queryResult.push(film);
     })
+    console.log(queryResult)
 })
 
 
@@ -58,4 +59,5 @@ let handleFilms = (req, res) => {
 
 module.exports = {
     handleFilms: handleFilms,
+    filmy: filmy,
 };

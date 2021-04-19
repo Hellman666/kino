@@ -1,12 +1,12 @@
 import db from "../configs/DBConnection";
 
 let sql = 'SELECT * FROM herci';
-let queryResult;
+let queryResult = [];
 let herci = db.query(sql, (err, results) =>{
     if (err) throw err;
-    console.log(results);
+    //console.log(results);
     results.forEach((herec) => {
-        queryResult = herec;
+        queryResult.push(herec);
     })
 })
 
@@ -19,4 +19,5 @@ let handleActors = (req, res) => {
 
 module.exports = {
     handleActors: handleActors,
+    herci: herci
 };
