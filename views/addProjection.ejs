@@ -1,0 +1,43 @@
+<%- include('layout/layout.ejs') %>
+<div class="container">
+    <div class="padding">
+        <h1>Přidat Projekci</h1>
+    </div>
+    <div class="center">
+        <div class="padding" >
+            <div class="register-form">
+                <form method="POST">
+                    <div class="form-group">
+                        <label>Datum promítání</label>
+                        <input type="date" class="form-control" id="datum_narozeni" name="datum_narozeni">
+                    </div>
+                    <div class="form-group">
+                        <label>Čas promítání</label>
+                        <input type="time" class="form-control" id="datum_narozeni" name="datum_narozeni">
+                    </div>
+                    <div class="form-group">
+                        <label>Název filmu</label>
+                        <select class="form-control" id="exampleSelect1">
+                            <% for(var i = 0; i < get.length; i++) { %>
+                            <option><%= get[i].nazev_cz %></option>
+                            <% } %>
+                        </select>
+                     </div>
+                    <div class="form-group">
+                        <label>Číslo sálu</label>
+                        <select class="form-control" id="exampleSelect1">
+                            <% for(var i = 0; i < get2.length; i++) { %>
+                            <option><%= get2[i].cislo_salu %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <hr>
+                    <div class="center">
+                        <button type="submit" class="btn btn-outline-primary">Uložit</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>
+</body>
+</html>

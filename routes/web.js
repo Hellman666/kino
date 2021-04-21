@@ -9,7 +9,9 @@ import initPassportLocal from "../controllers/passportLocalController";
 import aboutController from "../controllers/aboutController";
 import actorsController from "../controllers/actorsController";
 import projectionsController from "../controllers/projectionsController";
-
+import addFilmController from "../controllers/addFilmController";
+import addActorController from "../controllers/addActorController";
+import addProjectionController from "../controllers/addProjectionController";
 // Init all passport
 initPassportLocal();
 
@@ -34,6 +36,9 @@ let initWebRoutes = (app) => {
     router.get('/about', aboutController.handleAbout);
     router.get('/actors', actorsController.handleActors);
     router.get('/projections', projectionsController.handleProjections);
+    router.get('/addFilm', addFilmController.handleNewFilm);
+    router.get('/addActor', addActorController.handleNewActor);
+    router.get('/addProjection', addProjectionController.handleNewProjection)
     return app.use("/", router);
 
     

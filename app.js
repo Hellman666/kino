@@ -8,8 +8,8 @@ const mysql = require('mysql2');
 
 import configViewEngine from "./configs/viewEngine";
 import initWebRoutes from "./routes/web";
-import db from "./configs/DBConnection";
 import expressEjsLayouts from "express-ejs-layouts"
+
 
 const app = express()
 
@@ -57,7 +57,9 @@ con.query('SELECT * FROM filmy', (err, rows) => {
 */
 
 app.get('/', (req, res) => {
-    res.render('index', { Text: 'Kino Hvězda' })
+    res.render('index', { 
+        Text: 'Kino Hvězda', 
+    })
 })
 
 app.use(expressEjsLayouts);

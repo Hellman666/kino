@@ -1,0 +1,35 @@
+<%- include('layout/layout.ejs') %>
+<div class="container">
+    <div class="padding">
+        <h1>Přidat herce</h1>
+    </div>
+    <div class="center">
+        <div class="padding" >
+            <div class="register-form">
+                <form method="POST">
+                    <div class="form-group">
+                        <label>Jméno</label>
+                        <input type="text" class="form-control" name="jmeno" id="jmeno" placeholder="Jméno" required>
+                    </div>
+                    <div class="form-group"> 
+                        <label>Příjmení</label>                     
+                        <input type="text" name="prijmeni" class="form-control" id="prijmeni" placeholder="Příjmení" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Datum narození</label>
+                        <input type="date" class="form-control" id="datum_narozeni" name="datum_narozeni">
+                    </div>
+                    <div class="form-group">
+                        <label>Jméno postavy</label>
+                        <input type="text" class="form-control" name="jmeno_postavy" id="jmeno_postavy" placeholder="Jméno postavy" required>
+                    </div>
+                    <hr>
+                    <div class="center">
+                        <button type="submit" class="btn btn-outline-primary">Uložit</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>
+</body>
+</html>

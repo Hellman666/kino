@@ -1,0 +1,43 @@
+<%- include('layout/layout.ejs') %>
+<div class="container">
+    <div class="padding">
+        <h1>Přidat film</h1>
+    </div>
+    <div class="center">
+        <div class="padding" >
+            <div class="register-form">
+                <form method="POST">
+                    <div class="form-group">
+                        <label>Název filmu</label>
+                        <input type="text" class="form-control" name="Nazev" id="Nazev" placeholder="Název filmu" required>
+                    </div>
+                    <div class="form-group">        
+                        <label>Délka filmu (v min.)</label>              
+                        <input type="text" name="delka" class="form-control" id="delka" placeholder="Délka filmu" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Typ filmu</label>
+                        <select class="form-control" id="exampleSelect1">
+                            <% for(var i = 0; i < get.length; i++) { %>
+                            <option><%= get[i].typ_filmu %></option>
+                            <% } %>
+                        </select>
+                     </div>
+                    <div class="form-group">
+                        <label>Žánr filmu</label>
+                        <select class="form-control" id="exampleSelect1">
+                            <% for(var i = 0; i < get2.length; i++) { %>
+                            <option><%= get2[i].zanr_filmu %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <hr>
+                    <div class="center">
+                        <button type="submit" class="btn btn-outline-primary">Uložit</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>
+</body>
+</html>

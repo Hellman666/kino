@@ -31,13 +31,26 @@
           <a class="nav-link" href="/projections">Promítání</a>
         </li>
       </ul>
+      <% if('./loginController/LoggedIn') { %>
       <ul class="navbar-nav mr-right">
         <li class="nav-item">
-          <a class="nav-link" href="/register">Registrace</a>
+          <a class="nav-link" href="/register">Registrovat uživatele</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/login">Přihlásit se</a>
+          <form method="POST" action="/logout">
+            <button type="submit" class="btn btn-secondary">Log out</button>
+          </form>
         </li>
+      </ul> 
+      <% } else { %>
+        <ul class="navbar-nav mr-right">
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Registrace</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Přihlásit se</a>
+          </li>
+        <% } %>
       </ul>
     </div>
   </nav>

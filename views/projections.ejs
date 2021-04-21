@@ -1,4 +1,4 @@
-<%- include('layout.ejs') %>
+<%- include('layout/layout.ejs') %>
   <div class="container">
     <div class="containerTransparent">
       <img src="img/projection.jpg" alt="about1" style="width:100%;">
@@ -31,6 +31,13 @@
           <% } %>
         </tbody>
       </table>
+      <% if('./loginController/LoggedIn') { %>
+        <div class="padding">
+          <div class="center">
+            <button type="button" class="btn btn-outline-success"> <a href="/addProjection">Přidat projekci</a> </button>
+          </div>
+        </div>
+      <% } %>
     </div>
   </div>
     
