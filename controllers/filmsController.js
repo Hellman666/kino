@@ -51,7 +51,7 @@ let filmy = db.query(sql, (err, results) =>{
 
 let handleFilms = (req, res) => {
     res.render('films.ejs', {
-        Text: 'Kino Hvězda',
+        Text: 'Filmy',
         filmy: queryResult,
     }) 
 }

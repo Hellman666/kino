@@ -1,5 +1,6 @@
 let handleAbout = async (req, res) => {
-    return res.render("about.ejs",{
+    return res.render(
+        "about.ejs",{
         Text: "O kině",
     });
 };

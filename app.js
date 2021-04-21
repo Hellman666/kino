@@ -9,6 +9,7 @@ const mysql = require('mysql2');
 import configViewEngine from "./configs/viewEngine";
 import initWebRoutes from "./routes/web";
 import db from "./configs/DBConnection";
+import expressEjsLayouts from "express-ejs-layouts"
 
 const app = express()
 
@@ -35,6 +36,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 // init all web routes
 initWebRoutes(app);
+
+
 /*
 const con = mysql.createConnection({
     host: 'localhost',
@@ -53,9 +56,12 @@ con.query('SELECT * FROM filmy', (err, rows) => {
 })
 */
 
-app.get('/index', (req, res) => {
+app.get('/', (req, res) => {
     res.render('index', { Text: 'Kino Hvězda' })
 })
+
+app.use(expressEjsLayouts);
+app.set('layout', './layout');
 /*
 app.get('/kina', (req, res) => {
     let sql = 'SELECT * FROM filmy';
