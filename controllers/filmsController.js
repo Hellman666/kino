@@ -44,7 +44,7 @@ let filmy = db.query(sql, (err, results) =>{
     results.forEach((film) => {
         queryResult.push(film);
     })
-    //console.log(queryResult)
+    console.log(queryResult)
 })
 
 

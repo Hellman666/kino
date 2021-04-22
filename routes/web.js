@@ -36,7 +36,7 @@ let initWebRoutes = (app) => {
     router.get('/about', aboutController.handleAbout);
     router.get('/actors', actorsController.handleActors);
     router.get('/projections', projectionsController.handleProjections);
-    router.get('/addFilm', addFilmController.handleNewFilm);
+    router.get('/addFilm', addFilmController.handleNewFilm, addFilmController.createNewFilm);
     router.get('/addActor', addActorController.handleNewActor);
     router.get('/addProjection', addProjectionController.handleNewProjection)
     return app.use("/", router);

@@ -1,6 +1,69 @@
 import DBConnection from "./../configs/DBConnection";
 import bcrypt from "bcryptjs";
 
+let createNewFilm = (data) => {
+    return new Promise(async (resolve, reject) => {
+        let filmItem = {
+            nazev: data.nazev_cz,
+            delka: data.delka,
+            typ: data.typ_idtyp,
+            zanr: data.zanr_filmu_idzanr_filmu,
+        };
+
+        DBConnection.query(
+            'INSERT INTO filmy set ?', filmItem,
+            function(err, rows){
+                if(err){
+                    reject(false)
+                }
+                resolve('Create a new film succesful');
+            }
+        );
+    });
+};
+
+let createNewActor = (data) => {
+    return new Promise(async (resolve, reject) => {
+        let ActorItem = {
+            jmeno: data.jmeno,
+            prijmeni: data.prijmeni,
+            datum_narozeni: data.datum_narozeni,
+            jmeno_postavy: data.jmeno_postavy,
+        };
+
+        DBConnection.query(
+            'INSERT INTO herci set ?', ActorItem,
+            function(err, rows){
+                if(err){
+                    reject(false)
+                }
+                resolve('Create a new actor succesful');
+            }
+        );
+    });
+};
+
+let createNewProjection = (data) => {
+    return new Promise(async (resolve, reject) => {
+        let ProjectionItem = {
+            datum: data.datum,
+            cas: data.cas,
+            filmy: data.filmy_idfilmy,
+            saly: data.saly_idsaly,
+        };
+
+        DBConnection.query(
+            'INSERT INTO promitani set ?', ProjectionItem,
+            function(err, rows){
+                if(err){
+                    reject(false)
+                }
+                resolve('Create a new projection succesful');
+            }
+        );
+    });
+};
+
 let createNewUser = (data) => {
     return new Promise(async (resolve, reject) => {
         // check email is exist or not
@@ -52,5 +115,8 @@ let checkExistEmail = (email) => {
     });
 };
 module.exports = {
-    createNewUser: createNewUser
+    createNewUser: createNewUser,
+    createNewFilm: createNewFilm,
+    createNewActor: createNewActor,
+    createNewProjection: createNewProjection
 };

@@ -1,4 +1,5 @@
 import db from "../configs/DBConnection";
+import registerService from "./../services/registerService";
 
 //let sql = 'INSERT INTO '
 let sql = 'SELECT * FROM `filmy`';
@@ -28,6 +29,23 @@ let handleNewProjection = (req, res) => {
         get2: queryResult2,
     }) 
 }
+
+let createNewProjection = async(req, res) => {
+    let newProjection = {
+        datum: req.body.datum,
+        cas: req.body.cas,
+        filmy: req.body.filmy_idfilmy,
+        saly: req.body.saly_idsaly
+    };
+    try{
+        await registerService.createNewProjection(newProjection);
+    } catch (err) {
+        req.flash('errors', err);
+        return res.redirect('/addProjection');
+    }
+}
+
 module.exports = {
-    handleNewProjection: handleNewProjection
+    handleNewProjection: handleNewProjection,
+    createNewProjection: createNewProjection
 };
